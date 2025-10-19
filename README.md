@@ -1,5 +1,5 @@
 ### ЗАДАЧА
-https://docs.google.com/document/d/1Iem-IEtZwKDGU4zN-rBGtkQpdRp6nI8HBBWj6FC__2s/edit?tab=t.0#heading=h.sznr74705aow
+`Тестовое задание на должность PHP разработчик.docx`
 
 ### ПОДГОТОВКА
 * `composer install`
