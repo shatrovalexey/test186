@@ -2,7 +2,6 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Database\Seeders\{ServiceSeeder, GuideSeeder, HuntingBookingSeeder};
 
 class DatabaseSeeder extends Seeder
 {
@@ -12,9 +11,7 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $this->call([
-            ServiceSeeder::class,
-            GuideSeeder::class,
-            HuntingBookingSeeder::class,
+            //
         ]);
     }
 }

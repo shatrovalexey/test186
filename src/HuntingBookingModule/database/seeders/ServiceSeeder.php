@@ -1,5 +1,5 @@
 <?php
-namespace Database\Seeders;
+namespace test186\HuntingBookingModule\Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use test186\HuntingBookingModule\Models\Service;

@@ -4,9 +4,10 @@
 ### ПОДГОТОВКА
 * `composer install`
 * `php artisan migrate`
-* `php artisan db:seed --class=GuideSeeder`
-* `php artisan db:seed --class=ServiceSeeder`
-* `php artisan db:seed --class=HuntingBookingSeeder`
+* `php artisan migrate --path='src/HuntingBookingModule/database/migrations'`
+* `php artisan db:seed --class='test186\HuntingBookingModule\Database\Seeders\GuideSeeder'`
+* `php artisan db:seed --class='test186\HuntingBookingModule\Database\Seeders\ServiceSeeder'`
+* `php artisan db:seed --class='test186\HuntingBookingModule\Database\Seeders\HuntingBookingSeeder'`
 
 ### ЗАПУСК
 * `php artisan serve`
