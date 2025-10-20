@@ -12,24 +12,19 @@ class JsonResponseMiddleware
 
     public function handle(Request $request, Closure $next): Response
     {
-        if ($request->is('api/*')) {
-            $request->headers->set('Accept', static::CONTENT_TYPE);
-            
-            try {
-                $response = $next($request);
-                $response->headers->set('Content-Type', static::CONTENT_TYPE);
+        if (!$request->is('api/*')) return $next($request);
 
-                if (is_object($response) && property_exists($response, 'exception'))
-                    if (is_object($response->exception))
-                        throw $response->exception;
-                    elseif (property_exists($response, 'message'))
-                        throw new \Exception($response->message);
-                
-                return $response;
-                
-            } catch (\Throwable $e) {
-                return response()->json(['error' => $e->getMessage()], $this->getStatusCode($e));
-            }
+        $request->headers->set('Accept', static::CONTENT_TYPE);
+        
+        try {
+            $response = $next($request);
+            $response->headers->set('Content-Type', static::CONTENT_TYPE);
+
+            if (!is_object($response) || !property_exists($response, 'exception')) return $next($request);
+            if (is_object($response->exception)) throw $response->exception;
+            if (property_exists($response, 'message')) throw new \Exception($response->message);
+        } catch (\Throwable $e) {
+            return response()->json(['error' => $e->getMessage()], $this->getStatusCode($e));
         }
 
         return $next($request);
