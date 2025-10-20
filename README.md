@@ -16,7 +16,8 @@
 * Postman: `src/HuntingBookingModule/tests/teset186.postman_collection`
 
 ### ЧТО ОТНОСИТСЯ К "ЗАДАНИЕ 2"
-https://docs.google.com/document/d/1dikLiFvRfWIAvTkAf0BrRZKmgWIRVMl_5b_nu-6TZxM/edit?tab=t.0
+* `Задание №2.docx`
+* https://docs.google.com/document/d/1dikLiFvRfWIAvTkAf0BrRZKmgWIRVMl_5b_nu-6TZxM/edit?tab=t.0
 
 ### АВТОР
 Шатров Алексей <mail@ashatrov.ru>
