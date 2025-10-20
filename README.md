@@ -13,6 +13,7 @@
 * `php artisan serve`
 
 ### ТЕСТИРОВАНИЕ
+* SQLite: https://sqlitestudio.pl/
 * Postman:
 <p>src/HuntingBookingModule/tests/teset186.postman_collection
 <p><a href="https://app.getpostman.com/join-team?invite_code=5fbfcd2bff8987c614b3237145d3023e180221382da8c46d40d4f83b65039275&target_code=81044db7b41a72e23c7046d912cf98c1">приглашение</a>
