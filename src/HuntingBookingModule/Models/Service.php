@@ -73,6 +73,8 @@ class Service extends Model
      */
     public function scopeSearch(Builder $query, string $search): Builder
     {
+        // return $query->whereFullText(['name', 'description',], $search);
+
         return $query->where('name', 'like', "%{$search}%")
                     ->orWhere('description', 'like', "%{$search}%");
     }

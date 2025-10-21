@@ -40,7 +40,7 @@ abstract class Money
         if (!empty(static::$_formatter)) return static::$_formatter;
 
         static::$_formatter = new \NumberFormatter($locale, \NumberFormatter::CURRENCY);
-        static::$formatter->setAttribute(\NumberFormatter::FRACTION_DIGITS, $frac);
+        static::$_formatter->setAttribute(\NumberFormatter::FRACTION_DIGITS, $frac);
 
         return static::$_formatter;
     }
