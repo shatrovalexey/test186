@@ -2,8 +2,7 @@
 namespace test186\HuntingBookingModule\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\{Model, Builder};
 use test186\HuntingBookingModule\Helpers\{Money, Minutes};
 use test186\HuntingBookingModule\Models\{HuntingBooking, Guide,};
 
@@ -14,19 +13,8 @@ class Service extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'name',
-        'description',
-        'duration',
-        'price',
-        'is_active',
-    ];
-
-    protected $casts = [
-        'is_active' => 'boolean',
-        'duration' => 'integer',
-        'price' => 'decimal:2',
-    ];
+    protected $fillable = ['name', 'description', 'duration', 'price', 'is_active',];
+    protected $casts = ['is_active' => 'boolean', 'duration' => 'integer', 'price' => 'decimal:2',];
 
     /**
      * Отношение с бронированиями
@@ -34,14 +22,6 @@ class Service extends Model
     public function bookings()
     {
         return $this->hasMany(HuntingBooking::class);
-    }
-
-    /**
-     * Активные бронирования услуги
-     */
-    public function activeBookings()
-    {
-        return $this->bookings()->where('status', 'confirmed');
     }
 
     /**
@@ -101,10 +81,5 @@ class Service extends Model
     public function isAvailable(): bool
     {
         return $this->is_active;
-    }
-
-    protected static function newFactory()
-    {
-        return new ServiceFactory();
     }
 }
